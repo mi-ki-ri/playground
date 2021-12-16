@@ -12,10 +12,13 @@
 
         <article>
           <a href="{{ .Permalink }}" style="display:block;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
-            <strong>
+            <h3 style="display: inline;">
               {{ .Title }}
-            </strong>
-            {{ .Summary }}
+            </h3>
+            <div style="display: inline;">
+              {{ .Summary }}
+            </div>
+            
           </a>
         </article>
         
