@@ -5,15 +5,13 @@
     {{ partial "partials/header.html" . }}
     <main>
       <article>
-        <a href="{{ .Permalink }}" style="display:block;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
-          <h3>
-            {{ .Title }}
-          </h3>
-          <div>
-            {{ .Content }}
-          </div>
+        <h3>
+          {{ .Title }}
+        </h3>
+        <div>
+          {{ .Content }}
+        </div>
           
-        </a>
       </article>
       
       
