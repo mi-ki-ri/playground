@@ -1,12 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  test
-</body>
+  {{ partial "partials/head.html" . }}
+  <body>
+    {{ partial "partials/header.html" . }}
+    <main>
+      
+      {{$pages := (where .Pages "Type" "in" "posts")}} 
+      {{ $paginator := .Paginate $pages 10 }} 
+      {{ with $paginator }} 
+      {{ range $paginator.Pages }}
+
+        <article>
+          <a href="{{ .Permalink }}" style="display:block;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
+            <strong>
+              {{ .Title }}
+            </strong>
+            {{ .Summary }}
+          </a>
+        </article>
+        
+        {{ $burl := .Site.BaseURL }}
+
+        {{ with $paginator.HasPrev }}
+          <article>
+            <a class="text-center d-block fs-4" href="{{ $burl }}{{ $paginator.Prev.URL }}">
+                <strong>Prev</strong>
+            </a>
+          </article>
+        {{ end }}
+        {{ with $paginator.HasNext }}
+          <article>
+            <a class="text-center d-block fs-4" href="{{ $burl }}{{ $paginator.Next.URL }}">
+                <strong>Next</strong>
+            </a>
+          </article>
+        {{ end }}
+      {{ end }}
+      {{ end }}
+    </main>
+    {{ partial "partials/footer.html" . }}
+  </body>
 </html>
