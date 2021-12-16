@@ -1,0 +1,12 @@
+baseURL = "http://localhost:1313/"
+languageCode = "ja-jp"
+title = "見切り発車プレイグラウンド"
+hasCJKLanguage = true
+theme = "playground"
+
+[params]
+    subtitle = "Mikirihassha Playground"
+
+[taxonomies]
+    tag = "tags"
+    category = "categories"

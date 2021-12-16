@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  {{ partial "partials/head.html" . }}
+  <body>
+    {{ partial "partials/header.html" . }}
+    <main>
+      
+      {{$pages := (where .Site.RegularPages "Type" "in" "posts")}} 
+      {{ $paginator := .Paginate $pages 10 }} 
+      {{ with $paginator }} 
+      {{ range $paginator.Pages }}
+
+        <article>
+          <a href="{{ .Permalink }}" style="display:block;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
+            <strong>
+              {{ .Title }}
+            </strong>
+            {{ .Summary }}
+          </a>
+        </article>
+        
+        {{ $burl := .Site.BaseURL }}
+
+        {{ with $paginator.HasPrev }}
+          <article>
+            <a class="text-center d-block fs-4" href="{{ $burl }}{{ $paginator.Prev.URL }}">
+                <strong>Prev</strong>
+            </a>
+          </article>
+        {{ end }}
+        {{ with $paginator.HasNext }}
+          <article>
+            <a class="text-center d-block fs-4" href="{{ $burl }}{{ $paginator.Next.URL }}">
+                <strong>Next</strong>
+            </a>
+          </article>
+        {{ end }}
+      {{ end }}
+      {{ end }}
+    </main>
+    {{ partial "partials/footer.html" . }}
+  </body>
+</html>
