@@ -1,4 +1,4 @@
-baseURL = "http://localhost:1313/"
+baseURL = "https://playground.mikiri.net/"
 languageCode = "ja-jp"
 title = "見切り発車プレイグラウンド"
 hasCJKLanguage = true
