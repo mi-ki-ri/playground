@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   {{ partial "partials/head.html" . }}
-  <body>
+  <body class="doodle">
     {{ partial "partials/header.html" . }}
     <main>
       
@@ -10,7 +10,7 @@
       {{ with $paginator }} 
       {{ range $paginator.Pages }}
 
-        <article>
+        <article class="doodle-border">
           <a href="{{ .Permalink }}" style="display:block;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
             <h3 style="display: inline;">
               {{ .Title }}
