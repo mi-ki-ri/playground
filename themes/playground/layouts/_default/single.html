@@ -11,7 +11,7 @@
         <div>
           {{ .Content }}
         </div>
-        <section>
+        <section class="doodle-border" style="padding: 10px; margin: 10px;">
           {{- range $termName, $entries := .Taxonomies.categories }}
               <a href="{{ "/categories/" | relLangURL }}{{ $termName | urlize
               }}">{{ $termName }}</a>
