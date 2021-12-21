@@ -12,11 +12,11 @@
           {{ .Content }}
         </div>
         <section class="doodle-border" style="padding: 10px; margin: 10px;">
-          {{- range $termName, $entries := .Taxonomies.categories }}
+          {{- range $termName, $entries := .Params.categories }}
               <a href="{{ "/categories/" | relLangURL }}{{ $termName | urlize
               }}">{{ $termName }}</a>
           {{- end }}
-          {{- range $termName, $entries := .Taxonomies.tags }}
+          {{- range $termName, $entries := .Params.tags }}
               <a href="{{ "/tags/" | relLangURL }}{{ $termName | urlize
               }}">{{ $termName }}</a>
           {{- end }}
