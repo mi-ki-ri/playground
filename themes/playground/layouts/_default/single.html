@@ -12,13 +12,13 @@
           {{ .Content }}
         </div>
         <section class="doodle-border" style="padding: 10px; margin: 10px;">
-          {{- range $termName, $entries := .Params.categories }}
-              <a href="{{ "/categories/" | relLangURL }}{{ $termName | urlize
-              }}">{{ $termName }}</a>
+          {{- range $entries := .Params.categories }}
+              <a href="{{ "/categories/" | relLangURL }}{{ $entries | urlize
+              }}">{{ $entries }}</a>
           {{- end }}
-          {{- range $termName, $entries := .Params.tags }}
-              <a href="{{ "/tags/" | relLangURL }}{{ $termName | urlize
-              }}">{{ $termName }}</a>
+          {{- range $entries := .Params.tags }}
+              <a href="{{ "/tags/" | relLangURL }}{{ $entries | urlize
+              }}">{{ $entries }}</a>
           {{- end }}
         </section>    
       </article>
