@@ -11,7 +11,16 @@
         <div>
           {{ .Content }}
         </div>
-          
+        <section>
+          {{- range $termName, $entries := .Taxonomies.categories }}
+              <a href="{{ "/categories/" | relLangURL }}{{ $termName | urlize
+              }}">{{ $termName }}</a>
+          {{- end }}
+          {{- range $termName, $entries := .Taxonomies.tags }}
+              <a href="{{ "/tags/" | relLangURL }}{{ $termName | urlize
+              }}">{{ $termName }}</a>
+          {{- end }}
+        </section>    
       </article>
       
       
