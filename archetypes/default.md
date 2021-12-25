@@ -1,6 +1,6 @@
 ---
-title: "{{ replace .Name "-" " " | title }}"
-date: {{ .Date }}
+title: ""
+date: 
 draft: false
 tags: ["",""]
 categories: [ "テスト" ]
