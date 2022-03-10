@@ -5,6 +5,9 @@
     {{ partial "partials/header.html" . }}
     <main>
       <article class="doodle-border" style="padding: 10px; margin: 10px; ">
+        <p style="display: inline;font-size: 0.5rem;">
+          {{.Date.Format "2006-01-02"}}
+        </p>
         <h3>
           {{ .Title }}
         </h3>
